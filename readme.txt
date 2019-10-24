@@ -6,7 +6,7 @@
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 This readme file and acompanying scripts are a guide to construct and analyse bacterial plasmid 
-networks with OSLOM community detection algorithm. It is directly related to work presented in:
+networks with the OSLOM community detection algorithm. It is directly related to work presented in:
 
 	Acman, M., van Dorp, L., Santini, J. M., & Balloux, F. (2019). Large-scale network analysis
     captures biological features of bacterial plasmids. bioRxiv, 785212.
@@ -49,7 +49,7 @@ The accession numbers of plasmid sequences used in the project are available in
 supplementary_table_1.tsv. The table also contains all the accompanyng metadata associated
 with the plasmid sequences.
 
-The custom made script for assembling the dataset is available in building_plasmidDB/ directory.
+The custom made script for assembling the dataset is available in the building_plasmidDB/ directory.
 The directory contains the following scripts:
    --> download_plasmidDB.sh    -  Bash script used to download the dataset
    --> extractmeta_plasmidDB.py -  Python script which extracts the metadata from plasmid GenBank
@@ -61,18 +61,19 @@ The directory contains the following scripts:
                                    sequence description for the following regular expression: 
                                                    'plasmid.*complete sequence'
                                    Non-matching sequences are discarded. It also requires that the 
-                                   sequence host is from Bacteria domain. In the end, the script
+                                   sequence host is from the domain Bacteria. In the end, the script
                                    plots a plasmid length distribution before and after filtering.
    
-   After running the scripts above download the PlasmidFinder database:
+   After running the scripts above download the PlasmidFinder database (In the study, the database
+   was downloaded on 30/09/2018):
          https://bitbucket.org/genomicepidemiology/plasmidfinder_db/src/master/
    This database contains conserved replicon regions of plasmid sequences used in replicon typing
    Blast (blastn) the plasmid sequences (in plasmidDB.fasta) against the PlasmidFinder database.
      NOTE: Use output format 6 with blastn and be careful not to limit the number of outputs 
            (by default is limited to 500). Do not put any other restrictions on blastn.       
    --> append_type_to_meta.py   -  Python script used to analyse PlasmidFinder blast results.
-                                   The script is filtering replicon overlaps and calling replicon
-                                   types which have 95% coverage and 95% similarity. The results are
+                                   The script filters replicon overlaps and calls replicon types 
+				   which have 95% coverage and 95% similarity. The results are
                                    added to the metadata table. 
 
 MOB typing was performed using MOBtyping tool (https://github.com/AlexOrlek/MOBtyping) with default
@@ -83,7 +84,7 @@ parameters.
 ## PROKKA-ROARY PIPELINE ##
 ###########################
 
-The genetic content of each plasmid sequence was obtained using prokaryotic genome annotation
+The genetic content of each plasmid sequence was obtained using the prokaryotic genome annotation
 pipeline (i.e. prokka-roary pipeline). The pipeline uses the following dependencies:
    -->  https://github.com/sanger-pathogens/Roary
    -->  https://github.com/tseemann/prokka
@@ -123,7 +124,7 @@ To achieve this, the following online resources were used:
 ## SCORING SIMILARITY ##
 ########################
 
-The scripts for scoring similarity between pairs od plasmid sequences can be found in, evidently,
+The scripts for scoring similarity between pairs od plasmid sequences can be found in the
 scoring_similarity/ directory. The exact Jaccard index (JI) is used to score similarity between 
 plasmids. BinDash (https://github.com/zhaoxiaofei/bindash) software was used to compute the JI. 
 A requirement to implement the scripts is a text file with paths to individual plasmid sequences 
