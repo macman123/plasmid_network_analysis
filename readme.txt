@@ -136,11 +136,11 @@ A requirement to implement the scripts is a text file with paths to individual p
    --> pairwise_dist.sh      - takes batches_comb.txt and computes exact pairwise JI
                                The script runs the following BinDash commands:
                   SKETCHING batches:
-                  bindash sketch --listfname="$batch" --outfname=exactJ/batch_${counter}_full_sketch 
+                  bindash sketch --listfname="$batch" --outfname=bindash/batch_${counter}_full_sketch 
                   --nthreads=20 --minhashtype=-1
                   COMPUTING JI between two pairs of batches:
-                  $bindash dist  exactJ/${batch_1}_full_sketch exactJ/${batch_2}_full_sketch 
-                  --nthreads=20 --mthres=1e9 >> exactJ_dist.tsv 
+                  $bindash dist  bindash/${batch_1}_full_sketch bindash/${batch_2}_full_sketch 
+                  --nthreads=20 --mthres=1e9 >> bindash_out.tsv 
 
    --> convert_to_DM.py      - converts BinDash output into a distance matrix.
                                The resulting distance matrix is essentially the plasmid network.
