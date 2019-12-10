@@ -34,7 +34,7 @@ lines=`wc -l < $batches_comb`
 while read line; do
 	batch_1=`echo $line | cut -d' ' -f1`
 	batch_2=`echo $line | cut -d' ' -f2`
-	$bindash dist  exactJ/${batch_1}_full_sketch bindash/${batch_2}_full_sketch --nthreads=20 --mthres=1e9 >> bindash_out.tsv 
+	$bindash dist  bindash/${batch_1}_full_sketch bindash/${batch_2}_full_sketch --nthreads=20 --mthres=1e9 >> bindash_out.tsv 
 
 	progress=`calc $counter/$lines*100`
 	counter=$[$counter + 1]
