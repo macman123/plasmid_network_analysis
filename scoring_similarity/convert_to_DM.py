@@ -8,6 +8,7 @@ Created on Mon Mar 18 18:02:39 2019
 1st argument list of names matching the mash, bindash output
 2nd argument mash, bindash output
 3rd argument name of the output csv file
+For example: ./convert_to_DM.py plasmid_paths.txt bindash_out.tsv distance_matrix.csv
 """
 
 import sys
