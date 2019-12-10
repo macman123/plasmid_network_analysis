@@ -12,7 +12,7 @@ lines=`ls batches/* | wc -l`
 
 for batch in batches/*; do	
 
-	$bindash sketch --listfname="$batch" --outfname=exactJ/batch_${counter}_full_sketch --nthreads=20 --minhashtype=-1
+	$bindash sketch --listfname="$batch" --outfname=bindash/batch_${counter}_full_sketch --nthreads=20 --minhashtype=-1
 	counter=$[$counter + 1]
 	
 	echo
@@ -34,7 +34,7 @@ lines=`wc -l < $batches_comb`
 while read line; do
 	batch_1=`echo $line | cut -d' ' -f1`
 	batch_2=`echo $line | cut -d' ' -f2`
-	$bindash dist  exactJ/${batch_1}_full_sketch exactJ/${batch_2}_full_sketch --nthreads=20 --mthres=1e9 >> exactJ_dist.tsv 
+	$bindash dist  exactJ/${batch_1}_full_sketch bindash/${batch_2}_full_sketch --nthreads=20 --mthres=1e9 >> exactJ_dist.tsv 
 
 	progress=`calc $counter/$lines*100`
 	counter=$[$counter + 1]
