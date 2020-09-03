@@ -8,9 +8,9 @@
 This readme file and acompanying scripts are a guide to construct and analyse bacterial plasmid 
 networks with the OSLOM community detection algorithm. It is directly related to work presented in:
 
-	Acman, M., van Dorp, L., Santini, J. M., & Balloux, F. (2019). Large-scale network analysis
-    captures biological features of bacterial plasmids. bioRxiv, 785212.
-    doi: https://doi.org/10.1101/785212
+	Acman, M., van Dorp, L., Santini, J.M. et al. Large-scale network analysis captures 
+	biological features of bacterial plasmids. Nat Commun 11, 2452 (2020). 
+	https://doi.org/10.1038/s41467-020-16282-w
 
 Please cite the paper if you are using any of the methods or scripts found in this repository.
 For any questions relating the analysis or the results feel free to contact the corresponding 
